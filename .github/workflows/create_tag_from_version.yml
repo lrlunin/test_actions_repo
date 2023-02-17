@@ -12,15 +12,15 @@ jobs:
       
       - name: get VERSION
         run: |
-          VERSION=v$(head -n 1 VERSION)
+          echo "{COMMIT_VERSION}={v$(head -n 1 VERSION)}" >> $GITHUB_ENV
       - name: get latest tag
         id: previoustag 
         uses: WyriHaximus/github-action-get-previous-tag@v1
         with:
           fallback: v0.0.0
-        if: ${{ steps.previoustag.outputs.tag }} != ${{ env.VERSION }} # version is updated => new working tag
+        if: ${{ steps.previoustag.outputs.tag }} != ${{ env.COMMIT_VERSION }} # version is updated => new working tag
       - name: create newer tag
         uses: rickstaa/action-create-tag@v1.5.4
         with:
           tag:  ${{ env.VERSION }}
-          message: "updated to new version ${{ env.VERSION }}"        
+          message: "updated to new version ${{ env.COMMIT_VERSION }}"        
