@@ -12,3 +12,4 @@ msg2 = "different quoutes"
 
 print("some small update with old version creates no new tag")
 print("one more minor update")
+print("mega major release")
