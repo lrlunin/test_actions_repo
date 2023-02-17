@@ -12,8 +12,9 @@ jobs:
       
       - name: get VERSION
         run: |
-          echo "{COMMIT_VERSION}={v$(head -n 1 VERSION)}" >> $GITHUB_ENV
-          echo "COMMIT_VERSION = ${{ env.COMMIT_VERSION }}"
+          echo "COMMIT_VERSION=v$(head -n 1 VERSION)" >> $GITHUB_ENV
+      - name: check variable
+        run: echo "COMMIT_VERSION = ${{ env.COMMIT_VERSION }}"
       - name: get latest tag
         id: previoustag 
         uses: WyriHaximus/github-action-get-previous-tag@v1
