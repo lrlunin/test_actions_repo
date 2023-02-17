@@ -9,7 +9,8 @@ jobs:
     steps:
       - name: checkout repo content
         uses: actions/checkout@v3 # checkout the repository content to github runner.
-      
+        with:
+          fetch-depth: 0
       - name: get VERSION
         run: |
           echo "COMMIT_VERSION=v$(head -n 1 VERSION)" >> $GITHUB_ENV
