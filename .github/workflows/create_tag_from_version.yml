@@ -25,10 +25,10 @@ jobs:
         run: |
              echo ${{ steps.previoustag.outputs.tag }}
              echo ${{ env.COMMIT_VERSION }}
-             echo ${{ steps.previoustag.outputs.tag }} != ${{ env.COMMIT_VERSION }}
+             echo ${{ steps.previoustag.outputs.tag != env.COMMIT_VERSION }}
       - name: create newer tag
         uses: rickstaa/action-create-tag@v1.5.4
         with:
           tag:  ${{ env.COMMIT_VERSION }}
           message: "updated to new version ${{ env.COMMIT_VERSION }}"
-        if: ${{ steps.previoustag.outputs.tag }} != ${{ env.COMMIT_VERSION }} # version is updated => new working tag
+        if: ${{ steps.previoustag.outputs.tag != env.COMMIT_VERSION }} # version is updated => new working tag
