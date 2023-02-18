@@ -3,7 +3,7 @@ package:
   version: 1.0.0
 
 source:
-  git_rev: 1.0 (https://github.com/lrlunin/test_actions_repo/releases)
+  git_rev: v1.0.0
   git_url: https://github.com/lrlunin/test_actions_repo.git
 
 requirements:
