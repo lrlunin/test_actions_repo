@@ -1,0 +1,17 @@
+
+name: create version tag
+on:
+  push:
+    branches: main
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v3 # checkout the repository content to github runner.
+        with:
+          fetch-depth: 0
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+
