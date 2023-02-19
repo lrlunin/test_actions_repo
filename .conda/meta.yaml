@@ -1,10 +1,9 @@
 package:
   name: test_conda_packaging_lrlunin
-  version: 1.0.1
+  version: 1.0.8
 
 source:
   path: ../
-
 requirements:
   build:
     - python
