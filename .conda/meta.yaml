@@ -1,6 +1,6 @@
 package:
   name: test_conda_packaging_lrlunin
-  version: 1.0.9
+  version: "1.0.10"
 
 source:
   path: ../
