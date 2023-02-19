@@ -1,19 +1,19 @@
 package:
   name: test_conda_packaging_lrlunin
-  version: 1.0.0
+  version: 1.0.1
 
 source:
-  git_rev: v1.0.0
-  git_url: https://github.com/lrlunin/test_actions_repo.git
+  path: ../
 
 requirements:
   build:
     - python
-    - setuptools
-
   run:
     - python
-    - numpy
+    - pytango>=9.3.6
+    - numpy>=1.24.1
+    - pyzmq>=23.2.0
+    - pillow>=9.3.0
 
 about:
   home: https://github.com/lrlunin/test_actions_repo
